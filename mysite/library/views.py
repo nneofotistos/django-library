@@ -1,5 +1,8 @@
-from django.shortcuts import render, redirect
-# from .models import Book
+from django.forms import forms
+from django.shortcuts import render, redirect, HttpResponse
+from .models import *
+from .forms import LoanBookForm
+from . import forms, models
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
@@ -49,12 +52,31 @@ def signup_view(request):
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
 
+def books_view(request):
+    books = Book.objects.all()
+    return render(request, "books.html", {'books':books})
+
+
 @login_required
 def profile(request, username):
     user = User.objects.get(username=username)
     return render(request, 'profile.html', {'username': username})
 
+@login_required(login_url='admin/login/?next=/admin/')
+def loan_book(request):
+    form = forms.LoanBookForm()
+    if request.method == "POST":
+        form = forms.LoanBookForm(request.POST)
+        if form.is_valid():
+            obj = models.LoanedBook()
+            obj.user_id = request.POST['name2']
+            obj.isbn = request.POST['isbn2']
+            obj.save()
+            alert = True
+            return render(request, "loan_book.html", {'obj':obj, 'alert':alert})
+    return render(request, "loan_book.html", {'form':form})
+
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the index.")
+    return render(request, 'index.html')
 # Create your views here.
