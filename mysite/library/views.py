@@ -10,7 +10,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-
+from django.contrib.admin.views.decorators import staff_member_required
 
 
 def login_view(request):
@@ -62,7 +62,7 @@ def profile(request, username):
     user = User.objects.get(username=username)
     return render(request, 'profile.html', {'username': username})
 
-@login_required(login_url='admin/login/?next=/admin/')
+@staff_member_required
 def loan_book(request):
     form = forms.LoanBookForm()
     if request.method == "POST":

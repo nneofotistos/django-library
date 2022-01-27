@@ -28,3 +28,6 @@ class LoanedBook(models.Model):
     isbn = models.CharField(max_length=13)
     loan_date = models.DateField(auto_now=True)
     expiry_date = models.DateField(default=expiry)
+
+    def __str__(self):
+        return str(self.user_id ) + " ["+str(self.isbn)+']' + " ["+str(self.expiry_date)+']' 

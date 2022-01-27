@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <div class="container mt-4">
     <form method="POST"> {% csrf_token %}
         {% for i in form %}
@@ -12,3 +15,4 @@
     <button type="submit" class="btn btn-outline-primary mt-4">Issue Book</button>
 </div>
 </form>
+{% endblock %}

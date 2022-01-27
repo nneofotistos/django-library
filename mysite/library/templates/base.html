@@ -26,6 +26,20 @@
                 <a href="{% url 'signup' %}">SignUp</a>
             </span>
         {% endif %}
+            <span>|</span>
+            <span>
+                <a href="{% url 'index'%}">Home</a>
+            </span>
+            <span>|</span>
+            <span>
+                <a href="{% url 'books'%}">Books</a>
+            </span>
+        {% if user.is_staff %}
+            <span>|</span>
+            <span>
+                <a href="{% url 'loan_book'%}">Loan Book</a>
+            </span>
+        {% endif %}
     </header>
     {% block content %}
     {% endblock %}

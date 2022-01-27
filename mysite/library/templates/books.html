@@ -1,23 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <div class="container">
-    <header>
-        {% if user.is_authenticated %}
-            <span>
-                <a href="{% url 'profile' user.username %}">Hello {{user.username}}</a>
-            </span>
-            <span>|</span>
-            <span>
-                <a href="{% url 'logout' %}">Logout</a>
-            </span>
-        {% else %}
-            <span>
-                <a href="{% url 'login' %}">Login</a>
-            </span>
-            <span>|</span>
-            <span>
-                <a href="{% url 'signup' %}">SignUp</a>
-            </span>
-        {% endif %}
-    </header>
     <h1 class="text-center"><u>All Books List</u></h1>
     <table class="table table-hover" id="example">
         <thead>
@@ -42,3 +26,4 @@
         </tbody>
     </table>
     </div>
+{% endblock %}
