@@ -3,6 +3,12 @@
 ~~DONE set up associations with user and books/issued books~~<br/>
 styling/polishing front end
 
+# USES
+Python<br/>
+Django<br/>
+HTML<br/>
+CSS<br/>
+picsum.photos<br/>
 
 # WIREFRAMES
 ![alt text](library/static/wireframe1.png)

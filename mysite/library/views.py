@@ -54,6 +54,7 @@ def signup_view(request):
 
 def books_view(request):
     books = Book.objects.all()
+    
     return render(request, "books.html", {'books':books})
 
 

@@ -1,3 +1,28 @@
 h1 {
-    color: turquoise;
+    color: rgb(90, 199, 0);
+    ;
+    
+}
+
+a {
+    color: black;
+}
+
+header {
+    background-color: rgba(111, 179, 56, 0.514);
+    padding: -10;
+}
+
+body {
+    background: url(https://picsum.photos/1000/1100/?blur);
+    background-color: rgb(204, 204, 204);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
 }

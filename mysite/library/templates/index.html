@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>library</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-  </head>
-  <body>
-    <h1>library</h1>
+  <div>
+    <h1>Library</h1>
+    <form action="{% url 'books' %}" method="get">
+      <input name="q" type="text" placeholder="Search...">
+    </form>
     <hr />
-  </body>
+  </div>
 {% endblock %}
