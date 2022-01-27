@@ -1,6 +1,6 @@
 # django-library
 # TODO
-DONE set up associations with user and books/issued books
+~~DONE set up associations with user and books/issued books~~<br/>
 styling/polishing front end
 
 
