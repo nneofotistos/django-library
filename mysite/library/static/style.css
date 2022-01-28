@@ -1,3 +1,11 @@
+html {
+    background: url(https://picsum.photos/1000/1100/?blur);
+    background-color: rgb(204, 204, 204);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 h1 {
     color: rgb(90, 199, 0);
     ;
@@ -10,19 +18,27 @@ a {
 
 header {
     background-color: rgba(111, 179, 56, 0.514);
-    padding: -10;
+    margin: auto;
 }
 
 body {
-    background: url(https://picsum.photos/1000/1100/?blur);
-    background-color: rgb(204, 204, 204);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     text-align: center;
 }
 
 table {
     margin-left: auto;
     margin-right: auto;
+    background-color: rgba(156, 177, 139, 0.514);
+}
+
+#index {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+}
+
+table, td {
+    border: 1px solid black;
+    padding: 5px;
 }

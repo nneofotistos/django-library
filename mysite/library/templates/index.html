@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  <div>
-    <h1>Library</h1>
+  <div id=index>
+    <h1>Djangoville Public Library</h1>
     <form action="{% url 'books' %}" method="get">
       <input name="q" type="text" placeholder="Search...">
     </form>
-    <hr />
   </div>
 {% endblock %}
